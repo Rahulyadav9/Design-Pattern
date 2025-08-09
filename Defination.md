@@ -1,9 +1,6 @@
-Here’s a **clear `.md` note** on **Design Patterns** with definition, types, and examples (Java + JavaScript).
-I’ve kept it short but still covering the **core patterns** you need for interviews.
 
 ---
 
-````markdown
 # Design Patterns
 
 ## 1. Definition
@@ -134,5 +131,3 @@ subject.notify("Hello Observers!");
 
 ---
 
-If you want, I can prepare a **visual diagram** of all design patterns grouped by type, so you can remember them in one glance for interviews. That’s a huge help for quick recall.
-```
