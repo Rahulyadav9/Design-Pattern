@@ -12,7 +12,19 @@ Design patterns are broadly categorized into **three main types**:
 
 | Pattern              | Description                                                                                            | Example (JavaScript/Node.js)                  |
 | -------------------- | ------------------------------------------------------------------------------------------------------ | --------------------------------------------- |
-| **Singleton**        | Ensures only **one instance** of a class exists.                                                       | `DB connection`, `Logger`                     |
+| **Singleton**        | Ensures only **one instance** of a class exists.                                                       | `DB connection`, `Logger`  ```jsclass Database {
+  constructor() {
+    if (Database.instance) return Database.instance;
+    this.connection = "Connected to MongoDB";
+    Database.instance = this;
+  }
+}
+
+const db1 = new Database();
+const db2 = new Database();
+
+console.log(db1 === db2); // true → only one instance
+```                   |
 | **Factory Method**   | Defines an **interface** for creating an object but lets subclasses decide which class to instantiate. | Payment Gateway (`PayPal`, `Stripe`)          |
 | **Abstract Factory** | Factory of factories — produces families of related objects.                                           | UI components for dark/light theme            |
 | **Builder**          | Separates object **construction from representation**.                                                 | Building a complex `User` object step by step |
