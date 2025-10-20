@@ -15,7 +15,7 @@ Design patterns are broadly categorized into **three main types**:
 | **Singleton**        | Ensures only **one instance** of a class exists.                                                       | `DB connection`, `Logger`                    |
 | **Factory Method**   | Defines an **interface** for creating an object but lets subclasses decide which class to instantiate. | Payment Gateway (`PayPal`, `Stripe`)          |
 | **Abstract Factory** | Factory of factories — produces families of related objects.                                           | UI components for dark/light theme            |
-| **Builder**          | Separates object **construction from representation**.                                                 | Building a complex `User` object step by step |
+| **Builder**          |The Builder Pattern helps you construct complex objects step-by-step, allowing you to create different representations of the same object using the same construction process.                                                | Building a complex `User` object step by step |
 | **Prototype**        | Creates new objects by **cloning existing ones**.                                                      | Cloning a `config` object                     |
 
 ---
