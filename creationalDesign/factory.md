@@ -1,3 +1,12 @@
+1. Factory Method Pattern
+
+Purpose: Let subclasses decide which object to create.
+
+Real-life example:
+
+A Logistics company can deliver by Truck or Ship. Factory picks which one to create.
+```js
+JavaScript Example
 class Transport {
   deliver() {}
 }
@@ -29,6 +38,7 @@ class SeaLogistics extends Logistics {
     return new Ship();
   }
 }
+```
 
 const logistics = new SeaLogistics();
 const transport = logistics.createTransport();
