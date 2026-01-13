@@ -38,8 +38,8 @@ class SeaLogistics extends Logistics {
     return new Ship();
   }
 }
-```
 
 const logistics = new SeaLogistics();
 const transport = logistics.createTransport();
 transport.deliver();
+```
