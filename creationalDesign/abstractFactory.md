@@ -8,24 +8,63 @@ A UI theme (Light/Dark) should create matching button + checkbox styles.
 
 ###JavaScript Example
 ```js
-class LightButton { paint() { console.log("Light Button"); } }
-class DarkButton  { paint() { console.log("Dark Button"); } }
+// ===== Product Interfaces (Concrete Products) =====
+class LightButton {
+  paint() {
+    console.log("Light Button");
+  }
+}
 
-class LightCheckbox { paint() { console.log("Light Checkbox"); } }
-class DarkCheckbox  { paint() { console.log("Dark Checkbox"); } }
+class LightCheckBox {
+  paint() {
+    console.log("Light Checkbox");
+  }
+}
 
+class DarkButton {
+  paint() {
+    console.log("Dark Button");
+  }
+}
+
+class DarkCheckBox {
+  paint() {
+    console.log("Dark Checkbox");
+  }
+}
+
+// ===== Abstract Factories (Concrete Factories) =====
 class LightFactory {
-  createButton() { return new LightButton(); }
-  createCheckbox() { return new LightCheckbox(); }
+  createButton() {
+    return new LightButton();
+  }
+
+  createCheckbox() {
+    return new LightCheckBox();
+  }
 }
 
 class DarkFactory {
-  createButton() { return new DarkButton(); }
-  createCheckbox() { return new DarkCheckbox(); }
+  createButton() {
+    return new DarkButton();
+  }
+
+  createCheckbox() {
+    return new DarkCheckBox();
+  }
 }
 
-function app(factory) {
-  factory.createButton().paint();
-  factory.createCheckbox().paint();
+// ===== Client Code =====
+function App(factory) {
+  const button = factory.createButton();
+  const checkbox = factory.createCheckbox();
+
+  button.paint();
+  checkbox.paint();
 }
+
+// ===== Usage =====
+App(new DarkFactory());
+App(new LightFactory());
+
 ```
